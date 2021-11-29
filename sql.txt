@@ -1,0 +1,12 @@
+BUSQUEDA DE PROMOCIONES
+
+SELECT atracciones.nombre, promocion.nombre, atracciones.atraccionesIDE, promocion.tipo FROM atracciones
+JOIN promocion ON atracciones.atraccionesIDE=promocion.atraccion_ID
+WHERE promocion.nombre='pack oro'
+
+SUMA DE COSTOS Y DURACION 
+
+SELECT SUM(ROUND(atracciones.costo,2)) ,sum(atracciones.duracion),  promocion.nombre
+FROM atracciones
+join promocion on atracciones.atraccionesIDE= promocion.atraccion_ID
+GROUP BY PROMOCION.NOMBRE
